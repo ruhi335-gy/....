@@ -1,4 +1,13 @@
 $(document).ready(function () {
+  // 🔁 Auto-redirect if opened in Instagram (Android trick)
+  if (navigator.userAgent.includes("Instagram")) {
+    const alreadyRedirected = sessionStorage.getItem('redirectedFromInstagram');
+    if (!alreadyRedirected) {
+      sessionStorage.setItem('redirectedFromInstagram', 'true');
+      window.location.href = window.location.href;
+    }
+  }
+
   let userName = '';
 
   // Utility function to focus popup content for accessibility
