@@ -8,6 +8,22 @@ $(document).ready(function () {
     }
   }
 
+  function openInBrowser() {
+  window.open(window.location.href, '_blank');
+}
+
+$(document).ready(function () {
+  // Instagram check and show only button after 1ms
+  if (navigator.userAgent.includes("Instagram")) {
+    setTimeout(() => {
+      $('.open-browser-container').show();
+    }, 1); // Show after 1 millisecond
+  }
+
+  // ...rest of your existing JS code...
+});
+
+
   let userName = '';
 
   // Utility function to focus popup content for accessibility
